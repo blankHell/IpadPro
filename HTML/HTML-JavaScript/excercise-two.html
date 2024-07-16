@@ -1,0 +1,60 @@
+<!-- 
+Create a JavaScript Object:
+    It will store a starting value on creation and have two methods:
+        - The first will take a number and add that value to the stored value.
+        - The second will return the total for the object.
+
+Create a web page with a single input box:
+    Use your javascript object methods to add the input box value to the stored
+    value in the object and output the latest sum to webpage.
+
+Add validation to enter only numbers
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise 2</title>
+
+    <script>
+
+        function myObject () {
+            this.firstValue = 20;
+            console.log("Default Value : "+this.firstValue);
+        }
+
+        myObject.prototype.addToValue = function (number) {
+            this.total = this.firstValue + number;
+        }
+
+        myObject.prototype.getTotal = function () {
+            console.log("New Total : "+this.total);
+        }
+
+        var anObject = new myObject();
+        console.log("Object", anObject);
+
+        window.onload = function () {
+            var form = document.getElementById("myForm");
+            console.log(form);
+            form.onsubmit = function (e) {
+                var newObject = new myObject();
+                var formValue = document.getElementById("formValue").value;
+                console.log("FormValue : "+ formValue);
+                newObject.addToValue(parseInt(formValue));
+                newObject.getTotal();
+                e.preventDefault();
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form action="" id="myForm">
+        <input type="number" name="formValue" id="formValue" />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
