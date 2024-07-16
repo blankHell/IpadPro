@@ -1,0 +1,78 @@
+<!-- 
+ Recognize HTML semantic markup including section, article, nav, header, footer, and aside.
+ Define 3 new elements and 3 deprecated elements.
+ Create a layout container in HTML
+ Recognize the styling HTML and various methods of styling and how they work.
+ Define the elements of a CSS box model. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excercise 1</title>
+    <link rel="stylesheet" href="styles.css"/>
+
+    <style>
+        article {
+            border: 1px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <header style="color: blue;">
+      <img src="" alt="Logo" />
+      <h1>This is the header</h1>
+      <nav>
+        <ul>
+          <li>Your Item</li>
+          <li>Another Item</li>
+          <li>More Items</li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="body">
+      <h2>Section Title</h2>
+      <p>Some Blurb.</p>
+      <article>
+        <audio
+          src="https://mysite.org/download/audioHtml5/audioHtml5.mp3"
+          type="audio/mpg"
+          controls
+        >
+          I am sorry your browser doesn't support HTML5 <code>audio</code>.
+        </audio>
+        <h3>This is an interesting article about <bdi>ulaulaul</bdi></h3>
+        <div class="date">July 17, 2024</div>
+        <p>Here's the content of my article</p>
+        <details>
+          <summary>Copyright 1999-2024.</summary>
+          <p>- by Ray Ray Estees. All Rights Reserved.</p>
+          <p>
+            All content and graphics on this website are the property pf the
+            company Ray Ray Estees.
+          </p>
+        </details>
+      </article>
+    </section>
+
+    <aside>
+      <h3>Sidebar</h3>
+      <ul>
+        <li><a href="http://">Link</a></li>
+        <li><a href="http://">Another Link</a></li>
+      </ul>
+    </aside>
+
+    <footer>
+      <ul>
+        <li><a href="http://">Link</a></li>
+        <li><a href="http://">Another Link</a></li>
+      </ul>
+      <h5>&copy; Copyright 2024</h5>
+    </footer>
+  </body>
+</html>
