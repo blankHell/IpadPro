@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage API</title>
+
+    <script>
+
+        function count() {
+            if (typeof(Storage) !== "undefined") {
+                if(localStorage.current){
+                    localStorage.current = Number(localStorage.current) + 1;
+                } else {
+                    localStorage.current = 1;
+                }
+                document.getElementById("result").innerHTML = "You've clicked the button "+ localStorage.current + " times!"
+            } else {
+                alert("Sorry browser does not support Web Storage API!")
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    <p><button onclick="count()" type="button">Count</button></p>
+    <div id="result"></div>
+</body>
+</html>
