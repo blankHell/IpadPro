@@ -1,0 +1,48 @@
+<!-- 
+ 1. Add 5 div boxes and give them the visible border:
+    a. Each border should have different text and use a customized font.
+    b. Give the same class to the first two boxes.
+    c. Give each of the 3 remaining unique attributes.
+ 2. Use JQuery to select one of the boxes by its attributes and give it a background image
+ 3. Use JQuery to select the first two boxes by class and add a gradient to them.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML and CSS Excercise (Excercise - 3)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div[attribute1='value1']").css("background", "url('img/car.jpg')");
+            $("div.type1").css("background", "linear-gradient(to-right, blue, red, green)");
+        })
+    </script>
+    <style>
+        @font-face {
+            font-family: 'Times New Roman', Times, serif;
+            src: url('font/abc.otf');
+        }
+
+        div{
+            margin: 15px;
+            padding: 5px;
+            width: 400px;
+            height: 250;
+            float: left;
+            font-size: 24px;
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="type1">Section 1</div>
+    <div class="type2">Section 2</div>
+    <div attribute1="value1">Section 3</div>
+    <div attribute2="value2">Section 4</div>
+    <div attribute3="value3">Section 5</div>
+</body>
+</html>
