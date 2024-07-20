@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop API</title>
+    
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            padding: 10px;
+            border: 5px solid #aaaaaa;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <script>
+        function drag(params) {
+            params.dataTransfer.setData("id", params.target.id)
+        }
+
+        function drop(params) {
+            params.preventDefault();
+            var data = params.dataTransfer.getData("id");
+            params.target.appendChild(document.getElementById(data));
+        }
+
+        function allowDrop(params) {
+            params.preventDefault();
+        }
+    </script>
+    
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <img id="drag1" src="images/car.jpg" alt="Image of a car" width="400" draggable="true" ondragstart="drag(event)"/>
+
+</body>
+</html>
