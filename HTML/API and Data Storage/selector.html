@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors</title>
+  </head>
+  <body>
+    <script>
+
+        function clear() {
+            var allRow = document.querySelectorAll("#cityList li");
+            for (let i = 0; i < allRow.length; i++) {
+                allRow[i].style.color = 'Black';
+                
+            }
+        }
+
+      function selectFirstBC() {
+        clear();
+        var bcRow = document.querySelector("#cityList li.bc");
+        bcRow.style.color = "Red";
+      }
+
+      function selectFirstAB() {
+        clear();
+        var abRow = document.querySelector("#cityList li.ab");
+        abRow.style.color = "Red";
+      }
+
+      function selectBC() {
+        clear();
+        var bcRowAll = document.querySelectorAll("#cityList li.bc");
+        for (let i = 0; i < bcRowAll.length; i++) {
+            bcRowAll[i].style.color = "Red";
+            
+        }
+      }
+
+      function selectAB() {
+        clear();
+        var abRowAll = document.querySelectorAll("#cityList li.ab");
+        for (let i = 0; i < abRowAll.length; i++) {
+            abRowAll[i].style.color = "Red";
+            
+        }
+      }
+    </script>
+
+    <ul id="cityList">
+      <li class="bc">Vancouver</li>
+      <li class="bc">Burnaby</li>
+      <li class="bc">Surrey</li>
+      <li class="ab">Calgary</li>
+      <li class="ab">Edmonton</li>
+      <li class="ab">Lethbridge</li>
+    </ul>
+
+    <button onclick="selectFirstBC()">Select first BC</button>
+    <button onclick="selectFirstAB()">Select first AB</button>
+    <button onclick="selectBC()">Select BC</button>
+    <button onclick="selectAB()">Select AB</button>
+  </body>
+</html>
