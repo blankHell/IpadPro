@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Input Validation</title>
+    <style>
+      input:required {
+        border: 2px solid green;
+      }
+      form.touched input:invalid {
+        border: 2px solid red;
+      }
+      form {
+        border: 2px solid black;
+        padding: 10px;
+      }
+      div #fname, #lname, #postalcode, #age {
+        padding: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="" id="data_sheet">
+        <div id="fname">
+          <label for="fname">First Name :</label>
+          <input
+            type="text"
+            name="fname"
+            id="fname"
+            autocomplete="on"
+            placeholder="Enter your first name.."
+            required
+            autofocus
+          />
+        </div>
+        <div id="lname">
+          <label for="lname">Last Name :</label>
+          <input
+            type="text"
+            name="lname"
+            id="lname"
+            autocomplete="off"
+            placeholder="Enter your last name.."
+            required
+          />
+        </div>
+        <div id="postalcode">
+          <label for="postalcode">Postal Code :</label>
+          <input
+            type="text"
+            name="postalcode"
+            id="postalcode"
+            placeholder="Enter your zip code.."
+          />
+        </div>
+        <div id="age">
+          <label for="age">Age :</label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            placeholder="Age"
+            max="65"
+            min="0"
+            step="5"
+          />
+        </div>
+        <button type="submit" id="submit_bt">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
